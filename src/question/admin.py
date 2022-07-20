@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Question, Answer, Choice
 
 # Отображение полей в Админки
+
 class QuestionAdmin(admin.ModelAdmin):
     list_display = (
         'title',

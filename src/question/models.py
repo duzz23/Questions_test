@@ -14,8 +14,8 @@ class Question(models.Model):
 
 #Модель выбора
 class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.DO_NOTHING)
-    title = models.CharField(max_length=4096)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    title = models.CharField(max_length=250)
     points = models.FloatField()
     lock_other = models.BooleanField(default=False)
 
@@ -25,9 +25,9 @@ class Choice(models.Model):
 
 # Связующая модель вопрос/ответ
 class Answer(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING)
-    question = models.ForeignKey(Question, on_delete=models.DO_NOTHING)
-    choice = models.ForeignKey(Choice, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
