@@ -14,6 +14,7 @@
       <list>
         <option value="$MODULE_DIR$/src/user_register/templates" />
         <option value="$MODULE_DIR$/src/question/templates" />
+        <option value="$MODULE_DIR$/src/questions/tamplates" />
       </list>
     </option>
   </component>

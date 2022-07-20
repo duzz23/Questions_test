@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'user_register',
     'question',
+    'questions',
 ]
 
 MIDDLEWARE = [
