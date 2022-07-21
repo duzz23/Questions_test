@@ -10,6 +10,7 @@ from question.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('user_register.urls')),
+    path('answer/', include('answer.urls'), name='answer'),
 ]
 
 if settings.DEBUG:
