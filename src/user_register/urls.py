@@ -12,7 +12,8 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', User_login, name='login'),
     path('logout/', User_logout, name='logout'),
-    path('question1/', GetQuestion.as_view(), name='question1'),
-    path('answer1/', QuestionAnswer.as_view(), name='answer1'),
+    path('question/', GetQuestion.as_view(), name='question'),
+    path('answer/', QuestionAnswer.as_view(), name='answer'),
+
 
 ]

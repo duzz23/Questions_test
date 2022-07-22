@@ -17,7 +17,7 @@ def register(request):
             user = form.save()
             login(request, user)
             messages.success(request, 'Вы успешно зарегистрировались')
-            return redirect('index')
+            return render(request, 'answer/index.html', {"form": form})
         else:
             for message in form.error_messages:
                 messages.error(request, message)
@@ -32,7 +32,8 @@ def User_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('index')
+            return redirect('start/')
+
     else:
         form = UserLoginForm()
     return render(request, 'user_register/login.html', {"form": form})
